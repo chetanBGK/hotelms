@@ -42,4 +42,19 @@ public class RatingController {
         return new ResponseEntity<>(ratingService.deleteRating(id), HttpStatus.OK);
     }
 
+    @GetMapping("getratingbyuserid/{userId}")
+    public ResponseEntity<List<Ratings>> getRatingByUserId(@PathVariable int userId){
+        return new ResponseEntity<>(ratingService.getRatingByUserId(userId), HttpStatus.OK);
+    }
+
+    @GetMapping("getratingbyhotelid/{hotelId}")
+    public ResponseEntity<List<Ratings>> getRatingByHotelId(@PathVariable int hotelId){
+        return new ResponseEntity<>(ratingService.getRatingByHotelId(hotelId), HttpStatus.OK);
+    }
+
+    @PostMapping("saveallratings")
+    public ResponseEntity<List<Ratings>> saveAllRatings(@RequestBody List<Ratings> ratings){
+        return new ResponseEntity<>(ratingService.saveAllRatings(ratings), HttpStatus.OK);
+    }
+
 }

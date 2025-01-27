@@ -40,8 +40,6 @@ public class RatingServiceImpl implements RatingService {
         ratings1.setRating(ratings.getRating());
         ratings1.setFeedback(ratings.getFeedback());
         return ratingRepo.save(ratings1);
-
-
     }
 
     @Override
@@ -50,5 +48,18 @@ public class RatingServiceImpl implements RatingService {
         return "Rating deleted successfully";
         else
             throw new ResourceNotFoundException("Record not found with id"+ratingId);
+    }
+
+    public List<Ratings> getRatingByUserId(int userId){
+        return ratingRepo.findByUserId(userId);
+    }
+
+    public List<Ratings> getRatingByHotelId(int hotelId){
+        return ratingRepo.findByHotelId(hotelId);
+    }
+
+    @Override
+    public List<Ratings> saveAllRatings(List<Ratings> ratings) {
+        return ratingRepo.saveAll(ratings);
     }
 }

@@ -12,6 +12,11 @@ public interface RatingService {
     Ratings updateRating(Ratings ratings, int ratingId);
     String deleteRating(int ratingId);
 
+    List<Ratings> getRatingByUserId(int userId);
+    List<Ratings> getRatingByHotelId(int hotelId);
+
+    List<Ratings> saveAllRatings(List<Ratings> ratings);
+
 
 
 
