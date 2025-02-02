@@ -1,5 +1,6 @@
 package com.hotelservice.hotelmsController;
 
+import com.hotelservice.dto.HotelWithRatingDto;
 import com.hotelservice.entity.Hotel;
 import com.hotelservice.hotelService.HotelService;
 import org.springframework.http.HttpStatus;
@@ -24,7 +25,7 @@ public class HotelMsController {
     }
 
     @GetMapping("getallhotel")
-    public List<Hotel> getHotel()
+    public List<HotelWithRatingDto> getHotel()
     {
         return hotelService.getAllHotels();
     }
